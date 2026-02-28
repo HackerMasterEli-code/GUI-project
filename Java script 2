@@ -1,0 +1,36 @@
+sw.js
+const PROXY_PREFIX = '/proxy?url=';
+
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  if (url.pathname.startsWith(PROXY_PREFIX)) {
+    const encoded = url.searchParams.get('url');
+    if (!encoded) return event.respondWith(new Response('No URL', {status: 400}));
+
+    let target;
+    try { target = atob(encoded); } catch(e) { return event.respondWith(new Response('Bad encoding', {status: 400})); }
+
+    // Fetch the real target and return it (with CORS handling if possible)
+    event.respondWith(
+      fetch(target, {
+        method: event.request.method,
+        headers: event.request.headers,
+        redirect: 'follow',
+        body: event.request.body
+      }).then(response => {
+        // Clone and modify headers if needed (e.g. for CSP bypass attempts)
+        const newHeaders = new Headers(response.headers);
+        newHeaders.delete('content-security-policy'); // Risky but helps some sites
+        return new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: newHeaders
+        });
+      }).catch(() => new Response('Proxy error – site may block or need full rewrite', {status: 502}))
+    );
+  } else {
+    // Normal requests pass through
+    event.respondWith(fetch(event.request));
+  }
+});
