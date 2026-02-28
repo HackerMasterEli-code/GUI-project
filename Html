@@ -4,44 +4,238 @@ index.html
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Marcus’s GUI - Personal Proxy 🚀</title>
+  <title>Marcus’s GUI - Personal Proxy & Games 🚀</title>
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <div class="container">
     <h1>Marcus’s GUI</h1>
-    <p>Unblock sites, games, and more – your way.</p>
+    <p>Unblock sites, games, and more – your way. Houston 2026 vibes.</p>
 
     <div class="search-box">
       <input type="text" id="urlInput" placeholder="Enter URL (e.g. https://youtube.com)" autocomplete="off"/>
       <button onclick="proxyGo()">Launch</button>
     </div>
 
+    <!-- NEW: Quasar-style Quick YouTube Loader button -->
+    <div style="margin: 15px 0; text-align: center;">
+      <button onclick="quickYouTube()" style="padding: 12px 24px; background: #ff0000; color: white; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;">Quick YouTube Loader (Full Descriptions & Comments)</button>
+    </div>
+
     <div class="tabs">
       <button class="tab active" onclick="showTab('proxy')">Proxy</button>
       <button class="tab" onclick="showTab('games')">Games</button>
+      <button class="tab" onclick="showTab('movies')">Movies</button>
     </div>
 
     <div id="proxy" class="tab-content active">
       <iframe id="proxyFrame" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals" style="display:none; width:100%; height:80vh; border:none;"></iframe>
     </div>
 
-    <div id="games" class="tab-content" style="display:none;">
-      <p>Coming soon – add your favorite embedded games here!</p>
-      <!-- Example: <iframe src="https://thisismyproxygame.com/embed" width="100%" height="500"></iframe> -->
+    <div id="games" class="tab-content" style="display:none; text-align: center;">
+      <h2>Marcus’s Full Games Collection 🚀 (All Requested from Void V5 List)</h2>
+      <p>Organized by category. If an iframe doesn't load, proxy the game's URL in the Proxy tab!</p>
+      <div style="max-height: 70vh; overflow-y: auto; padding: 10px; background: #1a1a2e; border-radius: 10px;">
+
+        <!-- Your full games content here (unchanged) -->
+        <!-- Action -->
+        <h3>Action Games</h3>
+        <p>Happy Wheels, Gun Mayhem, Time Shooter, Vex 8</p>
+        <h4>😂 Happy Wheels</h4>
+        <iframe src="https://www.totaljerkface.com/happy-wheels-unblocked/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🔫 Gun Mayhem (unblocked embed)</h4>
+        <iframe src="https://www.crazygames.com/embed/gun-mayhem" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>⏰ Time Shooter</h4>
+        <iframe src="https://time-shooter.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🌀 Vex 8</h4>
+        <iframe src="https://vex8.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Puzzle -->
+        <h3>Puzzle Games</h3>
+        <p>2048, Wordle, Cut the Rope, The Impossible Quiz, Happy Glass</p>
+        <h4>2048</h4>
+        <iframe src="https://play2048.co/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Wordle (unblocked clone)</h4>
+        <iframe src="https://wordleunlimited.org/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🍬 Cut the Rope</h4>
+        <iframe src="https://www.crazygames.com/embed/cut-the-rope" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>❓ The Impossible Quiz</h4>
+        <iframe src="https://www.crazygames.com/embed/the-impossible-quiz" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Happy Glass</h4>
+        <iframe src="https://www.crazygames.com/embed/happy-glass" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Racing -->
+        <h3>Racing Games</h3>
+        <p>Moto X3M (series), Drift Boss, Drift Hunters, Snow Rider 3D</p>
+        <h4>🏍️ Moto X3M</h4>
+        <iframe src="https://www.hoodamath.com/games/motox3m.html" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Drift Boss</h4>
+        <iframe src="https://www.crazygames.com/embed/drift-boss" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Drift Hunters</h4>
+        <iframe src="https://www.crazygames.com/embed/drift-hunters" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>❄️ Snow Rider 3D</h4>
+        <iframe src="https://www.hoodamath.com/games/snowrider3d.html" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Multiplayer -->
+        <h3>Multiplayer Games</h3>
+        <p>Agar.io, Slither.io, Basketball Stars, Shell Shockers, Rooftop Snipers</p>
+        <h4>🦠 Agar.io</h4>
+        <iframe src="https://agar.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🐍 Slither.io</h4>
+        <iframe src="https://slither.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🏀 Basketball Stars</h4>
+        <iframe src="https://www.crazygames.com/embed/basketball-stars" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🥚 Shell Shockers</h4>
+        <iframe src="https://shellshock.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🔭 Rooftop Snipers</h4>
+        <iframe src="https://rooftopsnipers-game.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Simulation -->
+        <h3>Simulation Games</h3>
+        <p>Minecraft Classic, BitLife, Cookie Clicker, Idle Breakout, Monkey Mart, Papa's games</p>
+        <h4>⛏️ Minecraft Classic</h4>
+        <iframe src="https://classic.minecraft.net/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>BitLife</h4>
+        <iframe src="https://bitlife-life-simulator.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🍪 Cookie Clicker</h4>
+        <iframe src="https://orteil.dashnet.org/cookieclicker/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Idle Breakout</h4>
+        <iframe src="https://www.crazygames.com/embed/idle-breakout" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Monkey Mart</h4>
+        <iframe src="https://monkeymart.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Papa's games (example - proxy for full series if needed) -->
+        <h4>Papa's Freezeria (example Papa's game)</h4>
+        <iframe src="https://www.crazygames.com/embed/papas-freezeria" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Arcade/Classic -->
+        <h3>Arcade/Classic Games</h3>
+        <p>Pac-Man, Flappy Bird, Dino Game, Geometry Dash, Google Snake, Run 3</p>
+        <h4>👻 Pac-Man</h4>
+        <iframe src="https://www.crazygames.com/embed/pac-man" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Flappy Bird</h4>
+        <iframe src="https://flappybird.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🦖 Dino Game (Chrome offline clone)</h4>
+        <iframe src="https://chromedino.com/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🔺 Geometry Dash (unblocked)</h4>
+        <iframe src="https://geometrydashunblocked.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🐍 Google Snake</h4>
+        <iframe src="https://playsnake.org/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>🌌 Run 3</h4>
+        <iframe src="https://run-3online.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <!-- Bonus from your full list (non-categorized ones) -->
+        <h3>Bonus / Other Requested</h3>
+        <h4>Among Us (browser version/embed - proxy if needed for full)</h4>
+        <iframe src="https://now.gg/apps/innersloth-llc/228/among-us.html" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Spacebar Clicker</h4>
+        <iframe src="https://www.crazygames.com/embed/spacebar-clicker" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Suika Game (Watermelon merge clone)</h4>
+        <iframe src="https://www.crazygames.com/embed/suika-game" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Mr. Mine</h4>
+        <iframe src="https://www.crazygames.com/embed/mr-mine" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>OvO</h4>
+        <iframe src="https://ovo-game.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Tunnel Rush</h4>
+        <iframe src="https://tunnel-rush.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+        <h4>Retro Bowl</h4>
+        <iframe src="https://retro-bowl.github.io/" width="100%" height="400" frameborder="0" allowfullscreen style="border: 2px solid #00ff88; border-radius: 10px;"></iframe>
+
+      </div>
+      <p style="margin-top: 20px;">That's all from your list! If any don't load perfectly (some sites block iframes), type the game's direct URL in the Proxy box and Launch. Add more anytime by editing this file.</p>
     </div>
 
-    <footer>Made by Marcus  • 2026</footer>
+    <div id="movies" class="tab-content" style="display:none; text-align: center;">
+      <h2>Marcus’s Movie Loader 🎥</h2>
+      <p>Watch free movies & TV unblocked. Embeds below for quick access (legal/ad-supported options). If blocked or no play, paste the site URL into Proxy tab and Launch!</p>
+      <div style="max-height: 70vh; overflow-y: auto; padding: 10px; background: #1a1a2e; border-radius: 10px;">
+
+        <h3>Legal Free Streaming Embeds (Often Unblocked at School)</h3>
+
+        <h4>Tubi (Massive free library – ad-supported movies/TV)</h4>
+        <iframe src="https://tubitv.com/" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+        <h4>Pluto TV (Live channels + on-demand movies/TV)</h4>
+        <iframe src="https://pluto.tv/" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+        <h4>Crackle (Free Hollywood movies & originals)</h4>
+        <iframe src="https://www.crackle.com/" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+        <h4>Internet Archive Movies (Public domain classics – no ads)</h4>
+        <iframe src="https://archive.org/details/movies" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+        <h3>Additional Embed/Search Fronts (Proxy Full Site for Best Results)</h3>
+
+        <h4>FlixBaba / General Embed Loader</h4>
+        <iframe src="https://flixbaba.com/" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+        <h4>2Embed Player (Direct movie embeds)</h4>
+        <iframe src="https://2embed.to/" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+        <h4>Soap2Day Alternative Front</h4>
+        <iframe src="https://soap2dayx.to/" width="100%" height="500" frameborder="0" allowfullscreen style="border: 2px solid #ffcc00; border-radius: 10px;"></iframe>
+
+      </div>
+      <p style="margin-top: 20px; font-weight: bold;">Pro Tip: For specific movies/TV – use Proxy tab: e.g., type "https://tubitv.com/search?q=your+movie" or "https://pluto.tv/" and Launch. Your proxy bypasses blocks. Rotate sites if one gets caught. Use responsibly!</p>
+    </div>
+
+    <footer>Made by Marcus in Houston • 2026 • Use responsibly</footer>
   </div>
 
   <script src="script.js"></script>
   <script>
-    // Register service worker for better proxying
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('Marcus’s GUI SW registered!', reg))
-        .catch(err => console.log('SW failed:', err));
+        .then(reg => console.log('SW registered!'))
+        .catch(err => console.log('SW error:', err));
     }
-  </script>
-</body>
-</html>
+
+    function proxyGo() {
+      let input = document.getElementById('urlInput').value.trim();
+      if (!input) return alert('Enter a URL!');
+      if (!input.startsWith('http')) input = 'https://' + input;
+      const encoded = btoa(input);
+      const proxyUrl = `/proxy?url=${encoded}`;
+      const frame = document.getElementById('proxyFrame');
+      frame.src = proxyUrl;
+      frame.style.display = 'block';
+    }
+
+    // NEW: Quick YouTube Loader function (Quasar-style full proxy load)
+    function quickYouTube() {
+      const ytUrl = 'https://www.youtube.com';
+      const encoded = btoa(ytUrl);
+      const proxyUrl = `/proxy?url=${encoded}`;
+      const frame = document.getElementById('proxyFrame');
+      frame.src = proxyUrl;
+      frame.style.display = 'block';
+      showTab('proxy');  // Switch to proxy tab
